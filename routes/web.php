@@ -21,3 +21,7 @@ Auth::routes();
 
 Route::get('/profile',[App\Http\Controllers\ProfileController::class, 'index'])->name('profile');
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+Route::get('admin/home', [App\Http\Controllers\HomeController::class, 'index'])
+    ->name('admin.home')
+    ->middleware('isadmin');
